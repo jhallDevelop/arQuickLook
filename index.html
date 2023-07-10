@@ -26,10 +26,15 @@ var isMobile = {
 
 if ( isMobile.Android() ) {
         document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+        document.location.crossorigin="anonymous";
     }
 else if(isMobile.iOS())
 {
     document.location.href="https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/Polycam_basket.usdz";
+    document.location.crossorigin="anonymous";
+}else {
+    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+    document.location.crossorigin="anonymous";
 }
 </script>
 </head>
