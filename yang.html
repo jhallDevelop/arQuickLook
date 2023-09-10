@@ -17,17 +17,15 @@
             font-family: Arial, sans-serif; /* Use a modern clean style font */
         }
         .download-instructions {
-            text-align: left; /* Align instructions to the left */
+            text-align: center; /* Center the instructions */
             font-size: 18px;
             color: #333;
             margin: 20px; /* Add space around the instructions */
         }
-
         .download-instructions h1 {
             font-size: 32px; /* Larger font size for the title */
-            text-align: center; /* Center the title */
+            /* text-align: center; */ /* No need for text-align here */
         }
-
         .passcode-container {
             border: 2px solid #333; /* Border style and color */
             border-radius: 10px; /* Slightly beveled edges */
@@ -35,13 +33,11 @@
             text-align: center;
             background-color: #fff; /* Background color for the passcode container */
         }
-
         .subtitle {
             font-size: 24px; /* Adjust subtitle font size as needed */
             color: #555; /* Subtitle text color */
             margin-bottom: 10px; /* Add space between subtitle and passcode */
         }
-
         #passcode-input {
             width: 200px; /* Adjust input field width as needed */
             height: 30px; /* Adjust input field height as needed */
@@ -51,7 +47,6 @@
             border-radius: 5px; /* Slightly beveled edges for input */
             padding: 5px; /* Add padding to input field */
         }
-
         #submit-button {
             background-color: #333; /* Button background color */
             color: #fff; /* Button text color */
@@ -69,14 +64,15 @@
             padding: 10px 20px; /* Add padding to button */
             font-size: 16px; /* Adjust button font size as needed */
             cursor: pointer; /* Change cursor to pointer on hover */
-            text-align: center; /* Center the button text */
+            /* text-align: center; */ /* No need for text-align here */
             margin-top: 20px; /* Add space above the button */
         }
         img {
             width: 256px; /* Adjust the image width as needed */
             height: auto; /* Maintain the image's aspect ratio */
-            margin-right: 10px; /* Add space to the right of the image */
-            vertical-align: middle; /* Align the image vertically with text */
+            /* margin-right: 10px; */ /* Add space to the right of the image */
+            /* margin: 0 auto; */ /* No need for margin here */
+            /* vertical-align: middle; */ /* No need for vertical-align here */
         }
     </style>
 </head>
@@ -93,7 +89,7 @@
     </div>
     <div class="subtitle">Enter Passcode</div>
     <div class="passcode-container">
-        <input type="password" id="passcode-input" placeholder="Enter Passcode" pattern="[0-9]*">
+        <input type="password" id="passcode-input" placeholder="Enter Passcode" mode ="numeric" pattern="[0-9]*">
         <button id="submit-button">Submit</button>
     </div>
     
