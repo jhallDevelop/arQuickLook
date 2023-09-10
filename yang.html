@@ -16,6 +16,17 @@
             background-color: #f0f0f0; /* Background color */
             font-family: Arial, sans-serif; /* Use a modern clean style font */
         }
+        .download-instructions {
+            text-align: left; /* Align instructions to the left */
+            font-size: 18px;
+            color: #333;
+            margin: 20px; /* Add space around the instructions */
+        }
+
+        .download-instructions h1 {
+            font-size: 32px; /* Larger font size for the title */
+            text-align: center; /* Center the title */
+        }
 
         .passcode-container {
             border: 2px solid #333; /* Border style and color */
@@ -50,14 +61,42 @@
             font-size: 16px; /* Adjust button font size as needed */
             cursor: pointer; /* Change cursor to pointer on hover */
         }
+        #dlButton {
+            background-color: #333; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Slightly beveled edges for button */
+            padding: 10px 20px; /* Add padding to button */
+            font-size: 16px; /* Adjust button font size as needed */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            text-align: center; /* Center the button text */
+            margin-top: 20px; /* Add space above the button */
+        }
+        img {
+            width: 256px; /* Adjust the image width as needed */
+            height: auto; /* Maintain the image's aspect ratio */
+            margin-right: 10px; /* Add space to the right of the image */
+            vertical-align: middle; /* Align the image vertically with text */
+        }
     </style>
 </head>
 <body>
+    <div class="download-instructions">
+        <h1>Find the Passcode</h1>
+        <div>
+        <img src="modelQR.png" alt="Model Dowload QR code"></li>
+        <p>Scan this code to download the AR model and search for the hidden code.</p>
+        </div>
+        <div>
+            <button id="dlButton" class="download-button" onclick="downloadFile()">Download AR Clue</button>
+        </div>
+    </div>
     <div class="subtitle">Enter Passcode</div>
     <div class="passcode-container">
         <input type="password" id="passcode-input" placeholder="Enter Passcode" pattern="[0-9]*">
         <button id="submit-button">Submit</button>
     </div>
+    
 
     <script>
         // JavaScript to handle passcode validation and redirection
@@ -72,6 +111,43 @@
                 alert("Incorrect passcode. Please try again.");
             }
         });
+
+        var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+        
+
+        function downloadFile() {
+            if (isMobile.Android()) {
+                    console.log("Download Android");
+                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/basket.usdz";
+            } else if (isMobile.iOS()) {
+                console.log("Download iOS");
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/basket.usdz";
+            } else {
+                console.log("Download web");
+                // If the user is on a different mobile platform, provide instructions
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/basket.usdz";
+            }
+        }
     </script>
 </body>
 </html>

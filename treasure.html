@@ -88,21 +88,21 @@
             document.location.crossorigin="anonymous";
         }else {
             console.log("Download Web");
-            document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+            document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/nasa_curiosity_clean.glb";
             document.location.crossorigin="anonymous";
         }
 
         function downloadFile() {
             if (isMobile.Android()) {
                     console.log("Download Android");
-                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/nasa_curiosity_clean.glb";
             } else if (isMobile.iOS()) {
                 console.log("Download iOS");
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/Polycam_basket.usdz";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/NASA_Curiosity_Clean.usdz";
             } else {
                 console.log("Download web");
                 // If the user is on a different mobile platform, provide instructions
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/Polycam_basket.usdz";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/NASA_Curiosity_Clean.usdz";
             }
         }
     </script>
