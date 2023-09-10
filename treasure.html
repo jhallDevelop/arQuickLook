@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Background color */
+            font-family: Arial, sans-serif; /* Use a modern clean style font */
+        }
+
+        .download-instructions {
+            text-align: left; /* Align instructions to the left */
+            font-size: 18px;
+            color: #333;
+            margin: 20px; /* Add space around the instructions */
+        }
+
+        .download-instructions h1 {
+            font-size: 32px; /* Larger font size for the title */
+            text-align: center; /* Center the title */
+        }
+
+        .download-button {
+            background-color: #333; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Slightly beveled edges for button */
+            padding: 10px 20px; /* Add padding to button */
+            font-size: 16px; /* Adjust button font size as needed */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            text-align: center; /* Center the button text */
+            margin-top: 20px; /* Add space above the button */
+        }
+    </style>
+</head>
+<body>
+    <div class="download-instructions">
+        <h1>Download Instructions</h1>
+        <ul>
+            <li>Accept and download the AR file on your device.</li>
+            <li>Open the file on your phone with an AR viewer app.</li>
+            <li>Click Download if the file does not automatically download.</li>
+        </ul>
+    </div>
+
+    <button class="download-button" onclick="downloadFile()">Download Now</button>
+
+    <script>
+        var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+        if ( isMobile.Android() ) {
+            console.log("Download Android");
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+                document.location.crossorigin="anonymous";
+            }
+        else if(isMobile.iOS())
+        {
+            console.log("Download iOS");
+            document.location.href="https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/Polycam_basket.usdz";
+            document.location.crossorigin="anonymous";
+        }else {
+            console.log("Download Web");
+            document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+            document.location.crossorigin="anonymous";
+        }
+
+        function downloadFile() {
+            if (isMobile.Android()) {
+                    console.log("Download Android");
+                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/polycam_basket.glb";
+            } else if (isMobile.iOS()) {
+                console.log("Download iOS");
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/Polycam_basket.usdz";
+            } else {
+                console.log("Download web");
+                // If the user is on a different mobile platform, provide instructions
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/Polycam_basket.usdz";
+            }
+        }
+    </script>
+</body>
+</html>
