@@ -65,7 +65,7 @@
             font-size: 16px; /* Adjust button font size as needed */
             cursor: pointer; /* Change cursor to pointer on hover */
             /* text-align: center; */ /* No need for text-align here */
-            margin-top: 20px; /* Add space above the button */
+            margin-top: 10px; /* Add space above the button */
         }
         img {
             width: 256px; /* Adjust the image width as needed */
@@ -74,19 +74,23 @@
             /* margin: 0 auto; */ /* No need for margin here */
             /* vertical-align: middle; */ /* No need for vertical-align here */
         }
+
     </style>
 </head>
 <body>
     <div class="download-instructions">
-        <h1>Find the Passcode</h1>
+        <h1>Find the hidden Passcode</h1>
         <div>
-        <img src="modelQR.png" alt="Model Dowload QR code"></li>
-        <p>Scan this code to download the AR model and search for the hidden code.</p>
+        <img src="basket_image.jpeg" alt="Model Dowload QR code"></li>
         </div>
         <div>
             <button id="dlButton" class="download-button" onclick="downloadFile()">Download AR Clue</button>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="subtitle">Enter Passcode</div>
     <div class="passcode-container">
         <input type="password" id="passcode-input" placeholder="Enter Passcode" mode ="numeric" pattern="[0-9]*">
