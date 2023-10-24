@@ -78,7 +78,7 @@
 
         if ( isMobile.Android() ) {
             console.log("Download Android");
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/NASA_Curiosity_Clean.glb";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.glb";
                 document.location.crossorigin="anonymous";
             }
         else if(isMobile.iOS())
@@ -95,14 +95,14 @@
         function downloadFile() {
             if (isMobile.Android()) {
                     console.log("Download Android");
-                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/nasa_curiosity_clean.glb";
+                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.glb";
             } else if (isMobile.iOS()) {
                 console.log("Download iOS");
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/NASA_Curiosity_Clean.usdz";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.usdz";
             } else {
                 console.log("Download web");
                 // If the user is on a different mobile platform, provide instructions
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/NASA_Curiosity_Clean.usdz";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.usdz";
             }
         }
     </script>
