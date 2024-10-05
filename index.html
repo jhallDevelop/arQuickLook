@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treasure</title>
+    <title>Yang - Passcode Entry</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: left;
+            justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0; /* Background color */
             font-family: Arial, sans-serif; /* Use a modern clean style font */
         }
-
         .download-instructions {
-            text-align: left; /* Align instructions to the left */
+            text-align: center; /* Center the instructions */
             font-size: 18px;
             color: #333;
             margin: 20px; /* Add space around the instructions */
         }
-
         .download-instructions h1 {
             font-size: 32px; /* Larger font size for the title */
-            text-align: center; /* Center the title */
+            /* text-align: center; */ /* No need for text-align here */
         }
-
-        .download-button {
+        .passcode-container {
+            border: 2px solid #333; /* Border style and color */
+            border-radius: 10px; /* Slightly beveled edges */
+            padding: 20px; /* Add padding to the container */
+            text-align: center;
+            background-color: #fff; /* Background color for the passcode container */
+        }
+        .subtitle {
+            font-size: 24px; /* Adjust subtitle font size as needed */
+            color: #555; /* Subtitle text color */
+            margin-bottom: 10px; /* Add space between subtitle and passcode */
+        }
+        #passcode-input {
+            width: 200px; /* Adjust input field width as needed */
+            height: 30px; /* Adjust input field height as needed */
+            font-size: 16px; /* Adjust input font size as needed */
+            margin-bottom: 10px; /* Add space below input field */
+            border: 1px solid #333; /* Border style and color for input */
+            border-radius: 5px; /* Slightly beveled edges for input */
+            padding: 5px; /* Add padding to input field */
+        }
+        #submit-button {
             background-color: #333; /* Button background color */
             color: #fff; /* Button text color */
             border: none; /* Remove button border */
@@ -37,24 +55,63 @@
             padding: 10px 20px; /* Add padding to button */
             font-size: 16px; /* Adjust button font size as needed */
             cursor: pointer; /* Change cursor to pointer on hover */
-            text-align: center; /* Center the button text */
-            margin-top: 20px; /* Add space above the button */
         }
+        #dlButton {
+            background-color: #333; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none; /* Remove button border */
+            border-radius: 5px; /* Slightly beveled edges for button */
+            padding: 10px 20px; /* Add padding to button */
+            font-size: 16px; /* Adjust button font size as needed */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            /* text-align: center; */ /* No need for text-align here */
+            margin-top: 10px; /* Add space above the button */
+        }
+        img {
+            width: 256px; /* Adjust the image width as needed */
+            height: auto; /* Maintain the image's aspect ratio */
+            /* margin-right: 10px; */ /* Add space to the right of the image */
+            /* margin: 0 auto; */ /* No need for margin here */
+            /* vertical-align: middle; */ /* No need for vertical-align here */
+        }
+
     </style>
 </head>
 <body>
     <div class="download-instructions">
-        <h1>Download Instructions</h1>
-        <ul>
-            <li>Accept and download the AR file on your device.</li>
-            <li>Open the file on your phone with an AR viewer app.</li>
-            <li>Click Download if the file does not automatically download.</li>
-        </ul>
+        <h1>Find the hidden Passcode</h1>
+        <div>
+        <img src="basket_image.jpeg" alt="Model Dowload QR code"></li>
+        </div>
+        <div>
+            <button id="dlButton" class="download-button" onclick="downloadFile()">Download AR Clue</button>
+        </div>
     </div>
-
-    <button class="download-button" onclick="downloadFile()">Download Now</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="subtitle">Enter Passcode</div>
+    <div class="passcode-container">
+        <input type="password" id="passcode-input" placeholder="Enter Passcode" inputmode="numeric" pattern="[0-9]*">
+        <button id="submit-button">Submit</button>
+    </div>
+    
 
     <script>
+        // JavaScript to handle passcode validation and redirection
+        document.getElementById("submit-button").addEventListener("click", function () {
+            const passcode = document.getElementById("passcode-input").value;
+            
+            // Check if the entered passcode is correct (e.g., "4382")
+            if (passcode === "4382") {
+                // Redirect to the specified URL (change the URL as needed)
+                window.location.href = "https://jhalldevelop.github.io/arQuickLook/treasure.html"; 
+            } else {
+                alert("Incorrect passcode. Please try again.");
+            }
+        });
+
         var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -76,33 +133,19 @@
         }
     };
 
-        if ( isMobile.Android() ) {
-            console.log("Download Android");
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.glb";
-                document.location.crossorigin="anonymous";
-            }
-        else if(isMobile.iOS())
-        {
-            console.log("Download iOS");
-            document.location.href="https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.usdz";
-            document.location.crossorigin="anonymous";
-        }else {
-            console.log("Download Web");
-            document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.glb";
-            document.location.crossorigin="anonymous";
-        }
+        
 
         function downloadFile() {
             if (isMobile.Android()) {
                     console.log("Download Android");
-                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.glb";
+                    document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/basket.glb";
             } else if (isMobile.iOS()) {
                 console.log("Download iOS");
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.usdz";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/basket.usdz";
             } else {
                 console.log("Download web");
                 // If the user is on a different mobile platform, provide instructions
-                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/cartoony_dog.usdz";
+                document.location.href = "https://jhalldevelopbucket.s3.ap-southeast-2.amazonaws.com/basket.usdz";
             }
         }
     </script>
